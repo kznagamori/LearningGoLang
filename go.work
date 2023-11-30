@@ -1,0 +1,9 @@
+go 1.21.4
+
+use (
+	./Go-global-local-scope
+	./Go-multi-file
+	./Go-multi-pack-file
+	./Go-start-project
+	./Go-use-package
+)
