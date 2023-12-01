@@ -1,25 +1,34 @@
 go 1.21.4
 
 use (
+	./Go-async-await-example
 	./Go-balanced-tree
 	./Go-binary-tree
 	./Go-data-queue
 	./Go-data-stack
+	./Go-defer-example
 	./Go-error-handling
 	./Go-global-local-scope
 	./Go-hash-table
+	./Go-hash-table-package
 	./Go-inherit-struct
 	./Go-linked-list
+	./Go-list-package
+	./Go-message-box-example
 	./Go-multi-file
 	./Go-multi-pack-file
+	./Go-mutex-example
 	./Go-non-recursive-shell-sort
 	./Go-poly-structs
 	./Go-public-private
 	./Go-quick-sort
 	./Go-ring-buffer
+	./Go-ring-buffer-package
+	./Go-sort-package
 	./Go-start-project
 	./Go-string-format
 	./Go-struct-methods
 	./Go-struct-property
+	./Go-threading-example
 	./Go-use-package
 )
