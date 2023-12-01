@@ -1,9 +1,25 @@
 go 1.21.4
 
 use (
+	./Go-balanced-tree
+	./Go-binary-tree
+	./Go-data-queue
+	./Go-data-stack
+	./Go-error-handling
 	./Go-global-local-scope
+	./Go-hash-table
+	./Go-inherit-struct
+	./Go-linked-list
 	./Go-multi-file
 	./Go-multi-pack-file
+	./Go-non-recursive-shell-sort
+	./Go-poly-structs
+	./Go-public-private
+	./Go-quick-sort
+	./Go-ring-buffer
 	./Go-start-project
+	./Go-string-format
+	./Go-struct-methods
+	./Go-struct-property
 	./Go-use-package
 )
