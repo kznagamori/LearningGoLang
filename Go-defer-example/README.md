@@ -36,5 +36,5 @@ func exampleFunction() {
 6. `main function ending`
 7. `main function deferred call` (この時点でmain関数が終了)
 
-この出力から、`defer` で指定されたステートメントが、それぞれの関数の終了時に実行されていることがわかります。`exampleFunction` の `defer` が先に実行され、その後 `main` 関数の `defer` が実行されます。これは `defer` が **LIFO（Last In, First Out）**の順序で実行されるためです。また、`defer`は関数の終了時に実行されるため、通常のステートメントよりも後に実行されます。
+この出力から、`defer` で指定されたステートメントが、それぞれの関数の終了時に実行されていることがわかります。`exampleFunction` の `defer` が先に実行され、その後 `main` 関数の `defer` が実行されます。これは `defer` が <strong>LIFO（Last In, First Out）</strong>の順序で実行されるためです。また、`defer`は関数の終了時に実行されるため、通常のステートメントよりも後に実行されます。
 
