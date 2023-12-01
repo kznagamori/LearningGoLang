@@ -34,6 +34,7 @@
 - [Async/Await](./Go-async-await-example/README.md)
 - [ミューテックス](./Go-mutex-example/README.md)
 - [メッセージボックス](./Go-message-box-example/README.md)
+- [メッセージキュー](./Go-message-que-example/README.md)
 
 ## 言語特有機能
 - [defer](./Go-defer-example/README.md)

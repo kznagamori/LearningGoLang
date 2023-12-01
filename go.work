@@ -15,6 +15,7 @@ use (
 	./Go-linked-list
 	./Go-list-package
 	./Go-message-box-example
+	./Go-message-que-example
 	./Go-multi-file
 	./Go-multi-pack-file
 	./Go-mutex-example
