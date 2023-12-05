@@ -1,60 +1,70 @@
 # 複数ファイルを機能ごとにパッケージを分けて使用する
-
-複数のファイルにわたってパッケージを分けて使用するサンプルプログラムを作成する際、機能ごとに異なるパッケージを作成し、それらをメインアプリケーションでインポートして使用します。以下に、簡単な例を示します。この例では、二つのパッケージを使用します: `main` パッケージと `greetings` パッケージ。
+Go言語で複数のファイルを機能ごとにパッケージに分けて使用し、ライブラリと呼び出し側のパッケージを別のプロジェクトとして構成する例を以下に示します。
 
 ## プロジェクト構成
-- main.go: メインプログラム（main パッケージ）。
-- greetings/greetings.go: 挨拶を生成する関数を含む（greetings パッケージ）。
-
-## ディレクトリ構造
+### 1. ライブラリプロジェクト: mylibrary
+**ディレクトリ構造**
 ```
-Go-multi-pack-file/
-├── main.go
-└── greetings/
+mylibrary/
+├── go.mod
+└── greetings
     └── greetings.go
 ```
+**mylibrary/go.mod**
+```
+module example.com/mylibrary
 
-### greetings/greetings.go
-`greetings` パッケージでは、挨拶を生成する関数を定義します。
+go 1.21.4
+```
+**mylibrary/greetings/greetings.go**
 ```go
-// greetings/greetings.go
 package greetings
 
-import "fmt"
-
-// Greet は名前を受け取り、挨拶文を返します。
+// Greet は挨拶を返します。
 func Greet(name string) string {
     return fmt.Sprintf("こんにちは、%sさん!", name)
 }
 ```
 
-### main.go
-`main` パッケージ（メインプログラム）では、`greetings` パッケージの `Greet` 関数を使用します。
+### 2. 呼び出し側のプロジェクト: myapp
+**ディレクトリ構造**
+```
+myapp/
+├── go.mod
+└── main.go
+```
+**myapp/go.mod**
+```
+module example.com/myapp
 
+go 1.21.4
+
+require example.com/mylibrary v0.1.0
+
+replace example.com/mylibrary => ../mylibrary
+```
+ここで、`example.com/mylibrary v0.1.0` は、`mylibrary` ライブラリの適切なバージョンに置き換えてください。ローカルで開発している場合、`replace` ディレクティブを使ってローカルパスを指定します。
+
+**myapp/main.go**
 ```go
-// main.go
 package main
 
 import (
     "fmt"
-    "Go-multi-pack-file/greetings" // ローカルの `greetings` パッケージをインポート
+    "example.com/mylibrary/greetings"
 )
 
 func main() {
-    // greetings パッケージの Greet 関数を呼び出し
-    greeting := greetings.Greet("Taro")
-    fmt.Println(greeting)
+    fmt.Println(greetings.Greet("Taro"))
 }
 ```
 
-## プログラムの実行
-上記のディレクトリ構造に従ってファイルを配置します。  
-プロジェクトのルートディレクトリ（ `Go-multi-pack-file` ）で `go run . ` コマンドを実行します。  
-この例では、greetings パッケージは `greetings/greetings.go` に定義されており、main パッケージ（ `main.go` ）からインポートして使用されています。  
-Goでは、このように異なるパッケージを作成し、機能ごとにコードを整理することが一般的です。  
-また、パッケージのインポートパスは、Goモジュールの名前から始まることに注意してください（この例では `Go-multi-pack-file/greetings` ）。
+## 手順
+1. `mylibrary` と `myapp` プロジェクトをそれぞれ別のディレクトリに作成します。
+2. `mylibrary` プロジェクトのルートで `go mod init example.com/mylibrary` を実行して `go.mod` ファイルを初期化します。
+3. `myapp` プロジェクトのルートで `go mod init example.com/myapp` を実行し、`go.mod` ファイルを初期化します。
+4. `myapp` の `go.mod` ファイルに `mylibrary` への依存関係を追加します。ローカル開発の場合は 'replace' ディレクティブを使用します。
+5. `myapp` ディレクトリで `go run main.go` を実行して、ライブラリの関数が呼び出されることを確認します。
 
-
-
-
+この構成により、`mylibrary` ライブラリを `myapp` プロジェクトで利用することができます。`go.mod` ファイルは、各プロジェクトの依存関係を管理するために使用され、ローカル開発中のパスの指定には `replace` ディレクティブが役立ちます。
 

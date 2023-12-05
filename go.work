@@ -17,7 +17,7 @@ use (
 	./Go-message-box-example
 	./Go-message-que-example
 	./Go-multi-file
-	./Go-multi-pack-file
+	./Go-multi-pack-file/myapp
 	./Go-mutex-example
 	./Go-non-recursive-shell-sort
 	./Go-poly-structs
