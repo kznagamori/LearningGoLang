@@ -32,7 +32,7 @@
 - [ソート](./Go-sort-package/README.md)
 - [スレッド](./Go-threading-example/README.md)
 - [Async/Await](./Go-async-await-example/README.md)
-- [ミューテックス](./Go-mutex-example/README.md)
+- [排他処理](./Go-mutex-example/README.md)
 - [メッセージボックス](./Go-message-box-example/README.md)
 - [メッセージキュー](./Go-message-que-example/README.md)
 

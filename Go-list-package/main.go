@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	// リンクリストの作成
+	// リンクドリストの作成
 	l := list.New()
 
 	// 要素の追加
@@ -14,7 +14,7 @@ func main() {
 	l.PushFront(2) // 先頭に追加
 	l.PushBack(3)  // 末尾に追加
 
-	// リンクリストの表示
+	// リンクドリストの表示
 	for e := l.Front(); e != nil; e = e.Next() {
 		fmt.Println(e.Value)
 	}
@@ -29,7 +29,7 @@ func main() {
 
 	fmt.Println("After removing an element:")
 
-	// 要素削除後のリストの表示
+	// 要素削除後のリンクドリストの表示
 	for e := l.Front(); e != nil; e = e.Next() {
 		fmt.Println(e.Value)
 	}

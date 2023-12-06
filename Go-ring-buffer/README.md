@@ -1,6 +1,6 @@
 # リングバッファ構造
 
-リングバッファ（円環バッファ）構造を実装するためのサンプルプログラムを以下に示します。このプログラムでは、固定サイズのリングバッファを定義し、データの追加と取得の基本的な機能を実装します。
+Go言語でリングバッファ構造を実装し、データの追加を `push` メソッド、データの取得を `pop` メソッド、データの参照を `get` メソッドで行うサンプルプログラムを以下に示します。リングバッファは、固定サイズのバッファを使用し、データが循環するように管理されます。
 ## サンプルプログラム
 ```go
 package main
@@ -55,6 +55,18 @@ func (rb *RingBuffer) Pop() interface{} {
 	return item
 }
 
+// Get は指定されたインデックスの要素を参照します。
+func (rb *RingBuffer) Get(index int) interface{} {
+	rb.mu.Lock()
+	defer rb.mu.Unlock()
+
+	if index < 0 || index >= rb.size {
+		return nil
+	}
+
+	return rb.buffer[(rb.start+index)%rb.size]
+}
+
 // IsEmpty はバッファが空かどうかを返します。
 func (rb *RingBuffer) IsEmpty() bool {
 	return rb.start == rb.end
@@ -69,9 +81,17 @@ func main() {
 	rb.Push(2)
 	rb.Push(3)
 
-	// バッファから要素を取り出し、表示。
-	fmt.Println(rb.Pop()) // 1
-	fmt.Println(rb.Pop()) // 2
-	fmt.Println(rb.Pop()) // 3
+	// バッファから要素を取り出し。
+	fmt.Println("Pop:", rb.Pop()) // 1
+	fmt.Println("Pop:", rb.Pop()) // 2
+
+	// バッファに要素を追加。
+	rb.Push(4)
+	rb.Push(5)
+
+	// バッファの要素を参照。
+	fmt.Println("Get(0):", rb.Get(0)) // 3
+	fmt.Println("Get(1):", rb.Get(1)) // 4
 }
+
 ```
