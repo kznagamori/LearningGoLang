@@ -15,7 +15,7 @@
 - [各型のstring formatの組み合わせ](./Go-string-format/README.md)
 
 ## アルゴリズムとデータ構造
-- [リスト構造](./Go-linked-list/README.md)
+- [リンクドリスト構造](./Go-linked-list/README.md)
 - [リングバッファ構造](./Go-ring-buffer/README.md)
 - [キュー構造](./Go-data-queue/README.md)
 - [スタック構造](./Go-data-stack/README.md)
