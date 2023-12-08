@@ -13,7 +13,9 @@ use (
 	./Go-hash-table
 	./Go-hash-table-package
 	./Go-inherit-struct
+	./Go-lambda-example
 	./Go-linked-list
+	./Go-linq-example
 	./Go-list-package
 	./Go-message-box-example
 	./Go-message-que-example
