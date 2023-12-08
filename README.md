@@ -10,7 +10,7 @@
 - [パブリックな構造体のメンバ、メソッドを定義とプライベートな構造体のメンバ、メソッドを定義する](./Go-public-private/README.md)
 - [構造体の継承を実現する](./Go-inherit-struct/README.md)
 - [構造体のインタフェースを使用したポリモーフィズムの実現](./Go-poly-structs/README.md)
-- [構造体のC#みたいなプロパティを定義、使用](./Go-struct-property/README.md)
+- [C#みたいな構造体のプロパティを定義、使用](./Go-struct-property/README.md)
 - [一般的なエラー処理](./Go-error-handling/README.md)
 - [各型のstring formatの組み合わせ](./Go-string-format/README.md)
 - [ジェネリック機能](./Go-generics-example/README.md)
