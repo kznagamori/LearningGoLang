@@ -13,6 +13,7 @@
 - [構造体のC#みたいなプロパティを定義、使用](./Go-struct-property/README.md)
 - [一般的なエラー処理](./Go-error-handling/README.md)
 - [各型のstring formatの組み合わせ](./Go-string-format/README.md)
+- [ジェネリック機能](./Go-generics-example/README.md)
 
 ## アルゴリズムとデータ構造
 - [リンクドリスト構造](./Go-linked-list/README.md)

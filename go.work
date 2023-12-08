@@ -8,6 +8,7 @@ use (
 	./Go-data-stack
 	./Go-defer-example
 	./Go-error-handling
+	./Go-generics-example
 	./Go-global-local-scope
 	./Go-hash-table
 	./Go-hash-table-package
