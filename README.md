@@ -40,7 +40,7 @@
 - [メッセージボックス](./Go-message-box-example/README.md)
 - [メッセージキュー](./Go-message-que-example/README.md)
 
-## 言語特有機能
+## 言語特性
 - [defer](./Go-defer-example/README.md)
 
 ## サンプルプログラム
