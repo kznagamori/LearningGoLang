@@ -40,6 +40,9 @@
 - [メッセージボックス](./Go-message-box-example/README.md)
 - [メッセージキュー](./Go-message-que-example/README.md)
 
+## エコシステム
+- [パッケージをインストールして使用する](./Go-install-package/README.md)
+
 ## 言語特性
 - [defer](./Go-defer-example/README.md)
 
