@@ -73,6 +73,7 @@ Go言語（または単にGoとも呼ばれる）は、Googleによって開発�
 
 ## 言語特性
 - [defer](./Go-defer-example/README.md)
+- [リリースビルド](./Go-release-build/README.md)
 
 ## サンプルプログラム
 
